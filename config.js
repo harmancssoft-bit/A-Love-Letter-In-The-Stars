@@ -7,7 +7,7 @@ const ROMANTIC_CONFIG = {
   // 👫 Couple Information
   recipientName: "Baby",           // Her name / nickname
   senderName: "Kebab",             // Your name / nickname
-  specialDate: "2026-06-01T09:30:00", // The special date (June 1, 2026, 9:30 AM)
+  specialDate: "2026-06-01T09:30:00+05:30", // The special date (June 1, 2026, 9:30 AM)
 
   // ✨ Intro Envelope Message
   envelope: {
