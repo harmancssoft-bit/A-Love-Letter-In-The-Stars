@@ -150,6 +150,8 @@ window.ROMANTIC_CONFIG = {
   // 🎵 Ambient Music Settings
   music: {
     title: "Alfaaz",
-    artist: "Hamza Malik & Zain Zohaib"
+    artist: "Hamza Malik & Zain Zohaib",
+    file: "assets/Alfaaz - Hamza Malik, Zain Ali  Lyrics.mp3",
+    startAt: 72
   }
 };

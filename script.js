@@ -20,6 +20,7 @@ let currentReasonIndex = 0;
 let isAudioPlaying = false;
 let audioContext = null;
 let melodyInterval = null;
+let songAudioElement = null;
 
 // ===================================================
 // 🌟 APP INITIALIZATION & TEXT INJECTION
@@ -520,6 +521,10 @@ function startAmbientMusic() {
     if (controlBar) controlBar.classList.add('playing');
     if (statusEl) statusEl.innerText = `Playing ${songTitle}`;
 
+    const songFile = window.ROMANTIC_CONFIG?.music?.file || 'assets/Alfaaz - Hamza Malik, Zain Ali  Lyrics.mp3';
+    const startAt = Number(window.ROMANTIC_CONFIG?.music?.startAt || 72);
+    playLocalSong(songFile, startAt);
+
     // Dreamy pentatonic chord progression (Fmaj7 -> Am7 -> Bbmaj7 -> C9)
     const chords = [
       [349.23, 440.00, 523.25, 659.25], // F4, A4, C5, E5
@@ -550,6 +555,30 @@ function startAmbientMusic() {
   }
 }
 
+function playLocalSong(songFile, startAt) {
+  if (!songFile) return;
+
+  if (!songAudioElement) {
+    songAudioElement = new Audio(songFile);
+    songAudioElement.loop = true;
+    songAudioElement.volume = 0.85;
+    songAudioElement.preload = 'auto';
+
+    songAudioElement.addEventListener('loadedmetadata', () => {
+      if (songAudioElement.duration && startAt < songAudioElement.duration) {
+        songAudioElement.currentTime = startAt;
+      }
+    });
+  } else {
+    songAudioElement.src = songFile;
+    songAudioElement.load();
+  }
+
+  songAudioElement.play().catch((err) => {
+    console.warn('Song playback was blocked:', err);
+  });
+}
+
 function playSoftTone(freq, duration) {
   if (!audioContext) return;
   const osc = audioContext.createOscillator();
@@ -572,6 +601,12 @@ function playSoftTone(freq, duration) {
 function stopAmbientMusic() {
   isAudioPlaying = false;
   if (melodyInterval) clearInterval(melodyInterval);
+
+  if (songAudioElement) {
+    songAudioElement.pause();
+    songAudioElement.currentTime = 0;
+  }
+
   const controlBar = document.getElementById('audio-control-bar');
   const statusEl = document.getElementById('audio-status');
   if (controlBar) controlBar.classList.remove('playing');
