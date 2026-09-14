@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
 let currentReasonIndex = 0;
 let isAudioPlaying = false;
 let audioContext = null;
-let melodyInterval = null;
 let songAudioElement = null;
 
 // ===================================================
@@ -510,10 +509,6 @@ function startAmbientMusic() {
   if (isAudioPlaying) return;
 
   try {
-    const AudioCtx = window.AudioContext || window.webkitAudioContext;
-    if (!audioContext) audioContext = new AudioCtx();
-    if (audioContext.state === 'suspended') audioContext.resume();
-
     isAudioPlaying = true;
     const controlBar = document.getElementById('audio-control-bar');
     const statusEl = document.getElementById('audio-status');
@@ -524,34 +519,8 @@ function startAmbientMusic() {
     const songFile = window.ROMANTIC_CONFIG?.music?.file || 'assets/Alfaaz - Hamza Malik, Zain Ali  Lyrics.mp3';
     const startAt = Number(window.ROMANTIC_CONFIG?.music?.startAt || 72);
     playLocalSong(songFile, startAt);
-
-    // Dreamy pentatonic chord progression (Fmaj7 -> Am7 -> Bbmaj7 -> C9)
-    const chords = [
-      [349.23, 440.00, 523.25, 659.25], // F4, A4, C5, E5
-      [440.00, 523.25, 659.25, 783.99], // A4, C5, E5, G5
-      [466.16, 587.33, 698.46, 880.00], // Bb4, D5, F5, A5
-      [523.25, 659.25, 783.99, 987.77]  // C5, E5, G5, B5
-    ];
-
-    let chordIdx = 0;
-    function playNextChord() {
-      if (!isAudioPlaying || !audioContext) return;
-
-      const currentChord = chords[chordIdx % chords.length];
-      chordIdx++;
-
-      currentChord.forEach((freq, noteIdx) => {
-        setTimeout(() => {
-          if (!isAudioPlaying) return;
-          playSoftTone(freq, 2.2);
-        }, noteIdx * 320);
-      });
-    }
-
-    playNextChord();
-    melodyInterval = setInterval(playNextChord, 3800);
   } catch (err) {
-    console.warn("Audio context not supported or restricted:", err);
+    console.warn("Audio playback error:", err);
   }
 }
 
@@ -579,28 +548,8 @@ function playLocalSong(songFile, startAt) {
   });
 }
 
-function playSoftTone(freq, duration) {
-  if (!audioContext) return;
-  const osc = audioContext.createOscillator();
-  const gain = audioContext.createGain();
-
-  osc.type = 'sine';
-  osc.frequency.setValueAtTime(freq, audioContext.currentTime);
-
-  gain.gain.setValueAtTime(0.001, audioContext.currentTime);
-  gain.gain.exponentialRampToValueAtTime(0.08, audioContext.currentTime + 0.4);
-  gain.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + duration);
-
-  osc.connect(gain);
-  gain.connect(audioContext.destination);
-
-  osc.start();
-  osc.stop(audioContext.currentTime + duration);
-}
-
 function stopAmbientMusic() {
   isAudioPlaying = false;
-  if (melodyInterval) clearInterval(melodyInterval);
 
   if (songAudioElement) {
     songAudioElement.pause();
