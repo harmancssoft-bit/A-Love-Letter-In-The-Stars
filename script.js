@@ -43,6 +43,11 @@ function initApp() {
     setText('scroll-hint', cfg.hero.scrollHint);
   }
 
+  // Music metadata shown in the ambient audio bar
+  if (cfg.music) {
+    setText('audio-title', cfg.music.title || 'Alfaaz');
+  }
+
   // Names
   if (cfg.recipientName) {
     setText('nav-names', `${cfg.recipientName} & ${cfg.senderName || 'Me'}`);
@@ -511,8 +516,9 @@ function startAmbientMusic() {
     isAudioPlaying = true;
     const controlBar = document.getElementById('audio-control-bar');
     const statusEl = document.getElementById('audio-status');
+    const songTitle = window.ROMANTIC_CONFIG?.music?.title || 'Alfaaz';
     if (controlBar) controlBar.classList.add('playing');
-    if (statusEl) statusEl.innerText = 'Playing Romantic Melody';
+    if (statusEl) statusEl.innerText = `Playing ${songTitle}`;
 
     // Dreamy pentatonic chord progression (Fmaj7 -> Am7 -> Bbmaj7 -> C9)
     const chords = [

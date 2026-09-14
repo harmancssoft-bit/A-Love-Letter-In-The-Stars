@@ -123,16 +123,12 @@ window.ROMANTIC_CONFIG = {
 
     "And if you ever wonder how much you mean to me, remember this out of everything this life could have given me, I get to know your smile, hear your voice, hold you close, annoy you, laugh with you, miss you, care for you, kiss you, love you, and slowly discover more of you every day. I do not know what destiny looks like, but if it looks anything like getting to have you in my life, then I hope with everything in me that I get to keep choosing this destiny for a very, very long time.", 
 
-    "Aur agar kabhi mujhse poocha gaya ke iss qayaanaat mein sabse khoobsurat kya mila, toh main chand, sitaaron, falak ka naam nahi loo ga bas tumhari taraf dekh kar kahunga “Mujhe toh meri duniya, mera ghar mil gya hai.” 
+    "Aur agar kabhi mujhse poocha gaya ke iss qayaanaat mein sabse khoobsurat kya mila, toh main chand, sitaaron, falak ka naam nahi loo ga bas tumhari taraf dekh kar kahunga \"Mujhe toh meri duniya, mera ghar mil gya hai.\""
   ],
 
   closing: "Forever choosing you, loving you, and completely yours,",
 
   signature: "Your Kebab ❤️"
-},
-
-
-
 },
 
   // 🎁 Playful Interactive Surprise Section
@@ -153,7 +149,7 @@ window.ROMANTIC_CONFIG = {
 
   // 🎵 Ambient Music Settings
   music: {
-    title: "Dreamy Romantic Melody",
-    artist: "A Melody For Baby"
+    title: "Alfaaz",
+    artist: "Hamza Malik & Zain Zohaib"
   }
 };
