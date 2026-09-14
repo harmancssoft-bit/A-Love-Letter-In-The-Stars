@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Love Letter In The Stars ✨</title>
+  <meta name="description" content="A special romantic interactive universe crafted with love.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Interactive Background Canvas -->
+  <canvas id="starfield-canvas"></canvas>
+
+  <!-- ========================================== -->
+  <!-- 💌 INTRO ENVELOPE OVERLAY -->
+  <!-- ========================================== -->
+  <div id="intro-overlay" class="intro-overlay">
+    <div class="intro-content">
+      <div class="envelope-wrapper" id="envelope-wrapper">
+        <div class="envelope" id="envelope">
+          <div class="envelope-flap" id="envelope-flap"></div>
+          <div class="envelope-pocket"></div>
+          <div class="envelope-letter" id="envelope-letter">
+            <span class="letter-mini-heart">❤️</span>
+            <p class="letter-mini-text" id="envelope-preview-text">To the one who holds my heart...</p>
+          </div>
+          <div class="wax-seal" id="wax-seal" role="button" aria-label="Open Love Letter">
+            <div class="seal-inner">
+              <span class="seal-heart" id="seal-icon">❤️</span>
+            </div>
+            <div class="seal-glow"></div>
+          </div>
+        </div>
+      </div>
+      <div class="intro-instructions">
+        <span class="badge" id="intro-badge">A Special Delivery For You</span>
+        <h2 class="intro-title" id="intro-title">You Have A Secret Message</h2>
+        <p class="intro-sub" id="intro-subtitle">Click the glowing wax seal to open</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 🎵 FLOATING AMBIENT AUDIO BAR -->
+  <!-- ========================================== -->
+  <div class="audio-control-bar" id="audio-control-bar">
+    <button class="audio-btn" id="audio-toggle-btn" aria-label="Play or Pause Music">
+      <i class="fa-solid fa-music" id="audio-icon"></i>
+      <div class="audio-waves" id="audio-waves">
+        <span class="wave-bar"></span>
+        <span class="wave-bar"></span>
+        <span class="wave-bar"></span>
+        <span class="wave-bar"></span>
+      </div>
+    </button>
+    <div class="audio-info">
+      <span class="audio-title" id="audio-title">Romantic Melody</span>
+      <span class="audio-status" id="audio-status">Tap to Play</span>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 🌌 MAIN ROMANTIC EXPERIENCE -->
+  <!-- ========================================== -->
+  <div class="main-container" id="main-container">
+
+    <!-- Floating Navigation Bar -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-brand">
+        <span class="nav-heart">✨</span>
+        <span class="nav-title" id="nav-names">Forever & Always</span>
+      </div>
+      <div class="nav-links">
+        <a href="#hero" class="nav-link"><i class="fa-solid fa-heart"></i> Home</a>
+        <a href="#journey" class="nav-link"><i class="fa-solid fa-images"></i> Memories</a>
+        <a href="#reasons" class="nav-link"><i class="fa-solid fa-sparkles"></i> Reasons</a>
+        <a href="#letter" class="nav-link"><i class="fa-solid fa-envelope-open-text"></i> Letter</a>
+        <a href="#surprise" class="nav-link highlight"><i class="fa-solid fa-gift"></i> Surprise</a>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-glow-sphere sphere-1"></div>
+      <div class="hero-glow-sphere sphere-2"></div>
+
+      <div class="hero-content">
+        <span class="hero-tag" id="hero-greeting"><i class="fa-solid fa-sparkles"></i> To The One Who Holds My Heart</span>
+        <h1 class="hero-title" id="hero-title">Every Moment With You Is A Dream</h1>
+        <p class="hero-subtitle" id="hero-subtitle">You turned my ordinary world into something magical. Here is a little corner of the internet dedicated only to you.</p>
+
+        <!-- Live Love Timer -->
+        <div class="timer-container">
+          <div class="timer-header">
+            <i class="fa-solid fa-heart-pulse timer-icon"></i>
+            <span id="timer-title">Together & Counting Every Second</span>
+          </div>
+          <div class="timer-grid" id="timer-grid">
+            <div class="timer-card">
+              <span class="timer-value" id="timer-days">00</span>
+              <span class="timer-label">Days</span>
+            </div>
+            <div class="timer-card">
+              <span class="timer-value" id="timer-hours">00</span>
+              <span class="timer-label">Hours</span>
+            </div>
+            <div class="timer-card">
+              <span class="timer-value" id="timer-minutes">00</span>
+              <span class="timer-label">Minutes</span>
+            </div>
+            <div class="timer-card">
+              <span class="timer-value" id="timer-seconds">00</span>
+              <span class="timer-label">Seconds</span>
+            </div>
+          </div>
+          <p class="timer-footer">...and falling more in love every single day ❤️</p>
+        </div>
+
+        <a href="#journey" class="scroll-down-btn" aria-label="Scroll to our journey">
+          <span id="scroll-hint">Begin Our Story</span>
+          <i class="fa-solid fa-chevron-down bounce"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION 1: OUR BEAUTIFUL JOURNEY (MEMORIES) -->
+    <section class="section journey-section" id="journey">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-film"></i> Scrapbook of Us</span>
+        <h2 class="section-title">Our Beautiful Journey</h2>
+        <p class="section-desc">Snapshots of moments that took my breath away and will stay in my heart forever.</p>
+      </div>
+
+      <div class="memories-grid" id="memories-grid">
+        <!-- Injected via JavaScript from config.js -->
+      </div>
+    </section>
+
+    <!-- SECTION 2: REASONS WHY I LOVE YOU (INTERACTIVE DECK) -->
+    <section class="section reasons-section" id="reasons">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-sparkles"></i> Little Secrets of My Heart</span>
+        <h2 class="section-title">Reasons Why I Love You</h2>
+        <p class="section-desc">Just a few of the infinite reasons why you mean everything to me.</p>
+      </div>
+
+      <div class="reasons-interactive-container">
+        <div class="reason-deck" id="reason-deck">
+          <div class="reason-card" id="current-reason-card">
+            <div class="reason-card-inner">
+              <div class="reason-card-glow"></div>
+              <div class="reason-header">
+                <span class="reason-number" id="reason-num">01</span>
+                <span class="reason-sparkle"><i class="fa-solid fa-heart"></i></span>
+              </div>
+              <h3 class="reason-title" id="reason-title">Your Radiant Smile</h3>
+              <p class="reason-text" id="reason-detail">The way your eyes light up whenever you smile instantly brightens my darkest days.</p>
+              <div class="reason-footer">
+                <span class="reason-hint">Click next to reveal another secret ✨</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reasons-controls">
+          <button class="btn btn-secondary" id="btn-prev-reason" aria-label="Previous Reason">
+            <i class="fa-solid fa-arrow-left"></i> Previous
+          </button>
+          <span class="reasons-counter" id="reasons-counter">1 / 7</span>
+          <button class="btn btn-primary" id="btn-next-reason" aria-label="Next Reason">
+            Next Reason <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: DIGITAL LOVE LETTER -->
+    <section class="section letter-section" id="letter">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-feather-pointed"></i> Written From The Soul</span>
+        <h2 class="section-title">A Letter For You</h2>
+        <p class="section-desc">Words that I might not say often enough, but feel every day.</p>
+      </div>
+
+      <div class="parchment-container">
+        <div class="parchment-glow"></div>
+        <div class="parchment-paper" id="parchment-paper">
+          <div class="parchment-stamp">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <div class="parchment-header">
+            <span class="letter-date" id="letter-date">From Today & Always</span>
+            <h3 class="letter-salutation" id="letter-salutation">My Dearest Love,</h3>
+          </div>
+          <div class="letter-body" id="letter-body">
+            <!-- Injected via JavaScript from config.js -->
+          </div>
+          <div class="letter-footer">
+            <p class="letter-closing" id="letter-closing">Forever and completely yours,</p>
+            <p class="letter-signature" id="letter-signature">With All My Love ❤️</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: PLAYFUL SURPRISE & CELEBRATION -->
+    <section class="section surprise-section" id="surprise">
+      <div class="surprise-box glass-panel">
+        <div class="surprise-badge"><i class="fa-solid fa-gift"></i> One Little Question...</div>
+        <h2 class="surprise-question" id="surprise-question">Will you promise to stay by my side forever?</h2>
+        
+        <div class="surprise-interactive-area" id="surprise-interactive-area">
+          <button class="btn btn-yes pulse-grow" id="btn-surprise-yes">
+            <i class="fa-solid fa-heart"></i> <span id="surprise-yes-text">Yes, Forever & Always! 💖</span>
+          </button>
+          <button class="btn btn-no" id="btn-surprise-no">
+            <span id="surprise-no-text">No 😜</span>
+          </button>
+        </div>
+        <div class="playful-bubble" id="playful-bubble"></div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p class="footer-text">Crafted with infinite love for <span class="footer-highlight" id="footer-recipient">My Love</span></p>
+        <p class="footer-subtext">You are my today and all of my tomorrows ✨</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 🎉 CELEBRATION MODAL (WHEN YES IS CLICKED) -->
+  <!-- ========================================== -->
+  <div class="celebration-modal" id="celebration-modal">
+    <div class="celebration-backdrop" id="celebration-backdrop"></div>
+    <div class="celebration-card glass-panel">
+      <div class="celebration-icon">💖✨🎉</div>
+      <h2 class="celebration-title" id="celebration-title">Yay! You Made Me The Happiest!</h2>
+      <p class="celebration-message" id="celebration-message">I love you more than all the stars in the night sky. Thank you for being my person.</p>
+      <button class="btn btn-primary" id="btn-close-celebration">Hold My Hand ❤️</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
