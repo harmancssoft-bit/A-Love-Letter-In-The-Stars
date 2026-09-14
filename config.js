@@ -34,7 +34,7 @@ window.ROMANTIC_CONFIG = {
   date: "9 July",
   image: "assets/memory-1.jpg",
   tag: "My Favourite Eyes",
-  caption: "Maybe it is just a picture of our eyes to everyone else, but to me it feels like so much more. Somewhere between your eyes and mine lives a thousand little feelings I still do not know how to explain. I could look at you a million times and somehow still find another reason to fall for you."
+  caption: "Maybe it is just a picture of our eyes to everyone else, but to me it feels like so much more Somewhere between your eyes and mine lives a thousand little feelings I still do not know how to explain. I could look at you a million times and somehow still find another reason to fall for you."
 },
 
 {
@@ -42,7 +42,7 @@ window.ROMANTIC_CONFIG = {
   date: "One of My Favourite Days",
   image: "assets/memory-2.jpg",
   tag: "Us ❤️",
-  caption: "I love this picture because it is not just about how happy we look, it reminds me of how happy I feel whenever I am beside you. Standing this close to you, watching you smile, holding onto these little moments… this is the kind of happiness I wish I could keep forever."
+  caption: "I love this picture because it is not just about how happy we look, it reminds me of how happy I feel whenever I am beside you. Standing this close to you, watching you smile, holding onto these little moments this is the kind of happiness I wish I could keep forever."
 },
 
 {
@@ -50,14 +50,14 @@ window.ROMANTIC_CONFIG = {
   date: "A Little Us Moment",
   image: "assets/memory-3.jpg",
   tag: "Forever Favourite",
-  caption: "There is something about the simplest moments with you that stay with me the longest. No perfect place, no perfect pose, nothing extraordinary around us… just you beside me. And somehow, whenever it is you and me, even the most ordinary moment becomes one I never want to forget."
+  caption: "There is something about the simplest moments with you that stay with me the longest No perfect place, no perfect pose, nothing extraordinary around us just you beside me. And somehow, whenever it is you and me, even the most ordinary moment becomes one I never want to forget."
 },
 {
   title: "My Favourite Place Is Next To You",
   date: "One of Those Little Forever Moments",
   image: "assets/memory-4.jpg",
   tag: "My Safe Place ❤️",
-  caption: "I love this picture because it feels so much like us — comfortable, silly, close, and completely ourselves. No perfect pose, no trying too hard, just you beside me and that beautiful smile I could look at forever. Moments like this make me realise that my favourite place was never really a place… it is wherever I get to be this close to you."
+  caption: "I love this picture because it feels so much like us comfortable, silly, close, and completely ourselves. No perfect pose, no trying too hard, just you beside me and that beautiful smile I could look at forever Moments like this make me realise that my favourite place was never really a place it is wherever I get to be this close to you."
 },
   ],
 
@@ -121,12 +121,18 @@ window.ROMANTIC_CONFIG = {
 
     "So this little website is not me trying to prove how much I love you, because I do not think I could ever truly prove something this big. It is simply me taking pieces of my heart and putting them somewhere you can see them. A tiny universe made because one day my baby jokingly asked me for a website, and the boy who loves her thought she deserved one made with every bit of love he knows how to give.",
 
-    "And if you ever wonder how much you mean to me, remember this out of everything this life could have given me, I get to know your smile, hear your voice, hold you close, annoy you, laugh with you, miss you, care for you, kiss you, love you, and slowly discover more of you every day. I do not know what destiny looks like, but if it looks anything like getting to have you in my life, then I hope with everything in me that I get to keep choosing this destiny for a very, very long time."
+    "And if you ever wonder how much you mean to me, remember this out of everything this life could have given me, I get to know your smile, hear your voice, hold you close, annoy you, laugh with you, miss you, care for you, kiss you, love you, and slowly discover more of you every day. I do not know what destiny looks like, but if it looks anything like getting to have you in my life, then I hope with everything in me that I get to keep choosing this destiny for a very, very long time.", 
+
+    "Aur agar kabhi mujhse poocha gaya ke iss qayaanaat mein sabse khoobsurat kya mila, toh main chand, sitaaron, falak ka naam nahi loo ga bas tumhari taraf dekh kar kahunga “Mujhe toh meri duniya, mera ghar mil gya hai.” 
   ],
 
   closing: "Forever choosing you, loving you, and completely yours,",
 
   signature: "Your Kebab ❤️"
+},
+
+
+
 },
 
   // 🎁 Playful Interactive Surprise Section
